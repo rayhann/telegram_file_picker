@@ -1,7 +1,19 @@
 library telegram_file_picker;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:flutter/material.dart';
+
+import 'gallery_picker.dart';
+
+class TelegramFilePicker {
+  static Future show({required BuildContext context}) async {
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      enableDrag: false,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        return GalleryPicker();
+      },
+    );
+  }
 }
